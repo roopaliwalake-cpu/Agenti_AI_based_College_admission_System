@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bangalore University Admission System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/styles.css?v=auth-vertical-1" rel="stylesheet">
+</head>
+<body>
+<header class="topbar">
+    <div>
+        <p class="eyebrow">Bangalore University</p>
+        <h1>Admission System</h1>
+    </div>
+    <button id="homeBtn" class="ghost-button" type="button">Home</button>
+</header>
+
+<main class="app-shell">
+    <section id="portalStep" class="portal-screen active-step">
+        <article class="portal-hero">
+            <p class="eyebrow">Choose portal</p>
+            <h2>Welcome to Bangalore University Admission System</h2>
+        </article>
+        <div class="portal-grid">
+            <button id="studentPortalBtn" class="portal-card" type="button">
+                <span class="portal-icon">S</span>
+                <strong>Student Portal</strong>
+            </button>
+            <button id="adminPortalBtn" class="portal-card" type="button">
+                <span class="portal-icon">A</span>
+                <strong>Admin Portal</strong>
+            </button>
+        </div>
+    </section>
+
+    <section id="studentAuthPortal" class="portal-section">
+        <section class="flow-card active-step">
+            <div class="section-heading">
+                <span class="step-badge">S</span>
+                <div>
+                    <h2>Student Login</h2>
+                    <p>Register or login with your email ID and password to continue.</p>
+                </div>
+            </div>
+            <div class="auth-grid">
+                <label>Email ID
+                    <input id="studentAuthEmail" type="email" placeholder="student@example.com">
+                </label>
+                <label>Password
+                    <input id="studentAuthPassword" type="password" placeholder="Enter password">
+                </label>
+                <div class="auth-actions">
+                    <button id="studentLoginBtn" class="primary-action no-margin" type="button">Login</button>
+                    <button id="studentRegisterBtn" class="secondary-action" type="button">Register</button>
+                </div>
+            </div>
+            <div id="studentAuthNotice" class="notice">New students can register first, then login with the same email and password.</div>
+            <div class="step-actions">
+                <button class="secondary-action" type="button" data-back-step="home">Back To Portal</button>
+            </div>
+        </section>
+    </section>
+
+    <section id="adminAuthPortal" class="portal-section">
+        <section class="flow-card active-step">
+            <div class="section-heading">
+                <span class="step-badge">A</span>
+                <div>
+                    <h2>Admin Login</h2>
+                    <p>Login with the authorized admin email ID and password.</p>
+                </div>
+            </div>
+            <div class="auth-grid">
+                <label>Email ID
+                    <input id="adminAuthEmail" type="email" placeholder="admin@example.com">
+                </label>
+                <label>Password
+                    <input id="adminAuthPassword" type="password" placeholder="Enter password">
+                </label>
+                <div class="auth-actions">
+                    <button id="adminLoginBtn" class="primary-action no-margin" type="button">Login</button>
+                </div>
+            </div>
+            <div id="adminAuthNotice" class="notice">Only authorized admin users can open the dashboard.</div>
+            <div class="step-actions">
+                <button class="secondary-action" type="button" data-back-step="home">Back To Portal</button>
+            </div>
+        </section>
+    </section>
+
+    <section id="studentPortal" class="portal-section">
+    <section id="studentActionStep" class="portal-screen active-step">
+        <article class="portal-hero">
+            <p class="eyebrow">Student services</p>
+            <h2>Choose what you want to do.</h2>
+            <p>Start a new admission application or check your selection status after merit list release.</p>
+        </article>
+        <div class="portal-grid">
+            <button id="applicationProcessBtn" class="portal-card" type="button" data-student-mode="application">
+                <span class="portal-icon">AP</span>
+                <strong>Admission Application</strong>
+            </button>
+            <button id="meritCheckingBtn" class="portal-card" type="button" data-student-mode="selection">
+                <span class="portal-icon">SS</span>
+                <strong>Selection Status</strong>
+            </button>
+        </div>
+        <div class="step-actions">
+            <button class="secondary-action" type="button" data-back-step="home">Back To Portal</button>
+        </div>
+    </section>
+
+    <section id="applicationFlow" class="student-mode-section">
+    <section class="hero">
+        <div>
+            <p class="eyebrow">Agentic AI admission assistant</p>
+            <h2>Complete your admission in a guided step-by-step flow.</h2>
+            <p>Answer one question at a time. The system analyzes your profile, recommends Bangalore University courses, shows fees, then opens the admission form.</p>
+        </div>
+    </section>
+
+    <section class="progress-panel" aria-label="Admission progress">
+        <div class="progress-step active" data-step-dot="profile"><span>1</span>Profile</div>
+        <div class="progress-step" data-step-dot="courses"><span>2</span>Courses</div>
+        <div class="progress-step" data-step-dot="colleges"><span>3</span>Fees</div>
+        <div class="progress-step" data-step-dot="admission"><span>4</span>Admission</div>
+        <div class="progress-step" data-step-dot="payment"><span>5</span>Payment</div>
+        <div class="progress-step" data-step-dot="confirmation"><span>6</span>Confirmation</div>
+    </section>
+
+    <section id="profileStep" class="flow-card active-step">
+        <div class="section-heading">
+            <span class="step-badge">01</span>
+            <div>
+                <h2>Tell Us About Your Education</h2>
+                <p>Example: I completed BCA with 78% and I am interested in Artificial Intelligence.</p>
+            </div>
+        </div>
+        <textarea id="studentMessage" rows="5">I completed BCA with 78% and I am interested in Artificial Intelligence.</textarea>
+        <div class="step-actions">
+            <button class="secondary-action" type="button" data-back-step="student-options">Back To Student Options</button>
+        </div>
+        <button id="analyzeBtn" class="primary-action" type="button">Analyze My Profile</button>
+        <div id="agentSummary" class="notice">Start by analyzing your qualification and interest.</div>
+    </section>
+
+    <section id="coursesStep" class="flow-card">
+        <div class="section-heading">
+            <span class="step-badge">02</span>
+            <div>
+                <h2>Choose a Recommended Course</h2>
+                <p id="aiStatus">Courses will appear after profile analysis.</p>
+            </div>
+        </div>
+        <div id="courseResults" class="choice-grid"></div>
+        <div class="step-actions">
+            <button class="secondary-action" type="button" data-back-step="profile">Previous</button>
+        </div>
+    </section>
+
+    <section id="collegesStep" class="flow-card">
+        <div class="section-heading">
+            <span class="step-badge">03</span>
+            <div>
+                <h2>Review Bangalore University Fees</h2>
+                <p>Check the selected course, estimated fees, eligibility, and official source.</p>
+            </div>
+        </div>
+        <div class="selected-summary" id="courseSummary">No course selected yet.</div>
+        <div id="collegeResults" class="choice-grid"></div>
+        <div class="step-actions">
+            <button class="secondary-action" type="button" data-back-step="courses">Previous</button>
+        </div>
+    </section>
+
+    <section id="admissionStep" class="flow-card">
+        <div class="section-heading">
+            <span class="step-badge">04</span>
+            <div>
+                <h2>Admission Form</h2>
+                <p id="collegeSummary">Select a course to continue with Bangalore University.</p>
+            </div>
+        </div>
+        <div class="form-grid">
+            <label>Student name<input id="name" placeholder="Full name"></label>
+            <label>Email<input id="email" placeholder="student@example.com"></label>
+            <label>Phone<input id="phone" placeholder="Mobile number"></label>
+            <label>Date of birth<input id="dob" type="date"></label>
+            <label>Degree<input id="degree" placeholder="BCA, B.Com, B.Sc."></label>
+            <label>Percentage<input id="percentage" type="number" placeholder="78"></label>
+            <label class="wide">University<input id="university" placeholder="Previous university"></label>
+            <label class="wide">Address<textarea id="address" rows="3" placeholder="Permanent address"></textarea></label>
+            <label>Selected course<input id="selectedCourse" readonly></label>
+            <label>University<input id="collegeName" readonly></label>
+            <input id="selectedCollegeType" type="hidden">
+            <label>Fees<input id="fees" type="number" readonly></label>
+        </div>
+        <label class="policy-row">
+            <input id="policyAccepted" type="checkbox">
+            <span>I have verified official eligibility, fee, and admission policies.</span>
+        </label>
+        <div class="step-actions">
+            <button class="secondary-action" type="button" data-back-step="colleges">Previous</button>
+        </div>
+        <button id="submitAdmissionBtn" class="success-action" type="button">Submit Admission Form</button>
+    </section>
+
+    <section id="paymentStep" class="flow-card">
+        <div class="section-heading">
+                <span class="step-badge">05</span>
+            <div>
+                <h2>Payment</h2>
+                <p>Use simulated payment for this project version.</p>
+            </div>
+        </div>
+        <div class="selected-summary" id="paymentSummary">Submit the admission form to enable payment.</div>
+        <div class="step-actions">
+            <button class="secondary-action" type="button" data-back-step="admission">Previous</button>
+        </div>
+        <button id="payBtn" class="success-action" type="button" disabled>Simulate Payment</button>
+        <button id="receiptBtn" class="secondary-action receipt-button" type="button" disabled>Download Fee Receipt</button>
+    </section>
+
+    <section id="confirmationStep" class="flow-card">
+        <div class="section-heading">
+                <span class="step-badge">06</span>
+            <div>
+                <h2>Admission Confirmation</h2>
+                <p>Your final confirmation appears here after successful payment.</p>
+            </div>
+        </div>
+        <pre id="confirmation">No confirmation generated yet.</pre>
+        <div class="step-actions">
+            <button class="secondary-action" type="button" data-back-step="payment">Previous</button>
+            <button class="secondary-action" type="button" data-back-step="home">Back To Portal</button>
+        </div>
+        <button id="confirmationReceiptBtn" class="secondary-action receipt-button" type="button" disabled>Download Fee Receipt</button>
+    </section>
+
+    </section>
+
+    <section id="meritCheckingStep" class="flow-card">
+        <div class="section-heading">
+            <span class="step-badge">SS</span>
+            <div>
+                <h2>Selection Status</h2>
+                <p>After admin releases the merit list, check your selection details.</p>
+            </div>
+        </div>
+        <div class="form-grid compact">
+            <label>Email
+                <input id="meritStatusEmail" placeholder="student@example.com">
+            </label>
+            <label>Admission ID
+                <input id="meritStatusAdmissionId" type="number" placeholder="Optional">
+            </label>
+        </div>
+        <div class="step-actions">
+            <button class="secondary-action" type="button" data-back-step="student-options">Back To Student Options</button>
+        </div>
+        <button id="checkMeritStatusBtn" class="primary-action" type="button">Check Selection Status</button>
+        <div id="studentMeritStatus" class="notice">Enter your email or admission ID to view selection details.</div>
+    </section>
+
+    </section>
+
+    <section id="adminPortal" class="portal-section">
+    <section id="adminPanel" class="flow-card active-step">
+        <div class="section-heading">
+            <span class="step-badge">A</span>
+            <div>
+                <h2>Faculty/Admin Dashboard</h2>
+                <p>View all students department wise and download the information in Excel format.</p>
+            </div>
+        </div>
+        <div class="admin-tools">
+            <label>Department
+                <select id="departmentFilter">
+                    <option>All Departments</option>
+                    <option>Computer Science</option>
+                    <option>Commerce</option>
+                    <option>Arts and Humanities</option>
+                    <option>Life Sciences</option>
+                    <option>General PG</option>
+                </select>
+            </label>
+            <label>Search
+                <input id="adminQuery" placeholder="Name, email, course, university">
+            </label>
+            <button id="adminSearchBtn" class="secondary-action" type="button">Search</button>
+            <button id="downloadExcelBtn" class="success-action no-margin" type="button">Download Excel</button>
+        </div>
+        <div class="merit-tools">
+            <label>Course for merit list
+                <select id="meritCourseSelect">
+                    <option value="">Select course</option>
+                </select>
+            </label>
+            <button id="releaseMeritBtn" class="success-action no-margin" type="button">Release Merit List</button>
+        </div>
+        <div class="admin-stats">
+            <div><strong id="totalStudents">0</strong><span>Total Students</span></div>
+            <div><strong id="computerScienceCount">0</strong><span>Computer Science</span></div>
+            <div><strong id="commerceCount">0</strong><span>Commerce</span></div>
+            <div><strong id="artsCount">0</strong><span>Arts/Humanities</span></div>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                <tr>
+                    <th>Admission ID</th>
+                    <th>Student ID</th>
+                    <th>Student</th>
+                    <th>Phone</th>
+                    <th>Degree</th>
+                    <th>Percentage</th>
+                    <th>Department</th>
+                    <th>Course</th>
+                    <th>University</th>
+                    <th>Fees</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody id="adminRows"></tbody>
+            </table>
+        </div>
+        <section id="meritListPanel" class="merit-panel">
+            <div class="section-heading">
+                <span class="step-badge">M</span>
+                <div>
+                    <h2>Released Merit List</h2>
+                    <p id="meritListSummary">Select a course and click Release Merit List.</p>
+                </div>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Student ID</th>
+                        <th>Student Name</th>
+                        <th>Percentage</th>
+                        <th>Course</th>
+                        <th>Department</th>
+                        <th>University</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody id="meritRows">
+                    <tr><td colspan="8">No merit list released yet.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </section>
+    </section>
+</main>
+
+<script src="/app.js?v=auth-vertical-1"></script>
+</body>
+</html>
